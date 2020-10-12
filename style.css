@@ -1,10 +1,26 @@
 header {
-    background-color: rgb(49, 49, 49);
+  background-color: rgb(49, 49, 49);
+}
 
+h1 {
+  text-align: center;
+  color: white;
+  padding: 25px;
 }
-h1{
-    text-align: center;
-    color: white;
-    padding:25px;
+
+.card {
+  width: 30%;
 }
+
+/* .form-group {
+  width: 80%;
+} */
+
+.btn {
+  float: right;
 }
+/* .flex {
+  display: flex;
+  flex-direction: row;
+  float: right;
+} */
