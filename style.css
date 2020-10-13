@@ -8,19 +8,14 @@ h1 {
   padding: 25px;
 }
 
-.card {
-  width: 30%;
-}
-
-/* .form-group {
-  width: 80%;
-} */
-
-.btn {
+#search {
   float: right;
 }
-/* .flex {
-  display: flex;
-  flex-direction: row;
-  float: right;
-} */
+
+.weather {
+  /* float: right; */
+  display: inline-block;
+}
+input {
+  width: 90% !important;
+}
