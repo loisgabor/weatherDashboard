@@ -58,7 +58,7 @@ $(document).ready(function () {
         }
 
         $(".uv-index").text("UV-Index: " + uvIndex);
-        $(".uv-index").attr("class", `uv-index btn ${condition}`);
+        $(".uv-index").attr("class", `uv-index btn ${condition} disabled`);
       });
     });
   }
