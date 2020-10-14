@@ -18,8 +18,15 @@ h1 {
   display: inline-block;
 }
 input {
-  width: 85% !important;
+  width: 75% !important;
 }
-/* img {
-  float: left;
-} */
+.card1,
+.card2,
+.card3,
+.card4,
+.card5 {
+  background: blue;
+  border: none;
+  margin: 5px;
+  display: inline-block;
+}

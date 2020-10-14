@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     var citySearch = $("#inputCity").val();
     getCity(citySearch);
+    $(".forecast").show();
   });
   var now = moment().format("(M/D/YYYY)");
   function getCity(citySearch) {
@@ -24,7 +25,7 @@ $(document).ready(function () {
       $(".wind-speed").text("Wind Speed: " + response.wind.speed + " MPH");
       $(".humidity").text("Humidity: " + response.main.humidity + "%");
       $(".temp").text("Temperature: " + response.main.temp + " ℉");
-      //   localStorage.setItem("cities", citySearch);
+      localStorage.setItem("cities", citySearch);
 
       $("#weather-icon").attr(
         "src",
@@ -49,7 +50,7 @@ $(document).ready(function () {
         method: "GET",
       }).then(function (response) {
         var uvIndex = response.value;
-        console.log(response.value);
+        console.log(response);
         var condition = "btn-danger";
         if (uvIndex < 3) {
           condition = "btn-success";
@@ -59,7 +60,22 @@ $(document).ready(function () {
 
         $(".uv-index").text("UV-Index: " + uvIndex);
         $(".uv-index").attr("class", `uv-index btn ${condition} disabled`);
+        $(".card1").text();
       });
+    });
+    var queryURL =
+      "https://api.openweathermap.org/data/2.5/forecast?q=" +
+      citySearch +
+      "&appid=" +
+      APIKey +
+      "&units=imperial";
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
+      console.log(response);
+      var id_num = i / 8 + 1;
+      for (var i = 0; i < id_num.length; i++) {}
     });
   }
 });
