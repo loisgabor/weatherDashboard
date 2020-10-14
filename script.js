@@ -24,29 +24,42 @@ $(document).ready(function () {
       $(".wind-speed").text("Wind Speed: " + response.wind.speed + " MPH");
       $(".humidity").text("Humidity: " + response.main.humidity + "%");
       $(".temp").text("Temperature: " + response.main.temp + " ℉");
-      localStorage.setItem("cities", citySearch);
+      //   localStorage.setItem("cities", citySearch);
+
+      $("#weather-icon").attr(
+        "src",
+        "https://openweathermap.org/img/wn/" +
+          response.weather[0].icon +
+          "@2x.png"
+      );
       var lat = response.coord.lat;
       var long = response.coord.lon;
+      var queryURL =
+        "http://api.openweathermap.org/data/2.5/uvi?lat=" +
+        lat +
+        "&lon=" +
+        long +
+        "&appid=" +
+        APIKey;
 
-      getUVIndex(lat, long);
+      console.log(queryURL);
 
-      function getUVIndex(lat, long) {
-        $.ajax({
-          url: `https://api.openweathermap.org/data/2.5/uvi?appid=${APIKey}&lat=${lat}&lon=${long}`,
-          method: "GET",
-        }).then(function (response) {
-          var uvIndex = response.value;
-          var condition = "btn-danger";
-          if (uvIndex < 3) {
-            condition = "btn-success";
-          } else if (uvIndex < 7) {
-            condition = "btn-warning";
-          }
+      $.ajax({
+        url: queryURL,
+        method: "GET",
+      }).then(function (response) {
+        var uvIndex = response.value;
+        console.log(response.value);
+        var condition = "btn-danger";
+        if (uvIndex < 3) {
+          condition = "btn-success";
+        } else if (uvIndex < 7) {
+          condition = "btn-warning";
+        }
 
-          $(".uv-index").text("UV-Index: " + uvIndex);
-          $(".uv-index").attr("class", `btn ${condition}`);
-        });
-      }
+        $(".uv-index").text("UV-Index: " + uvIndex);
+        $(".uv-index").attr("class", `btn ${condition}`);
+      });
     });
   }
 });

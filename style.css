@@ -10,6 +10,7 @@ h1 {
 
 #search {
   float: right;
+  margin-left: 5px;
 }
 
 .weather {
@@ -17,5 +18,8 @@ h1 {
   display: inline-block;
 }
 input {
-  width: 90% !important;
+  width: 85% !important;
 }
+/* img {
+  float: left;
+} */
