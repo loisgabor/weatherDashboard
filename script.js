@@ -35,7 +35,7 @@ $(document).ready(function () {
       var lat = response.coord.lat;
       var long = response.coord.lon;
       var queryURL =
-        "http://api.openweathermap.org/data/2.5/uvi?lat=" +
+        "https://api.openweathermap.org/data/2.5/uvi?lat=" +
         lat +
         "&lon=" +
         long +
