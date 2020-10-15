@@ -14,7 +14,6 @@ h1 {
 }
 
 .weather {
-  /* float: right; */
   display: inline-block;
 }
 input {
@@ -29,7 +28,4 @@ input {
   border: none;
   margin: 5px;
   display: inline-block;
-}
-.card-title1 {
-  color: white;
 }
