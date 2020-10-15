@@ -107,7 +107,7 @@ $(document).ready(function () {
             <h5 class="card-title">${moment().add(1, "days").format("L")}</h5>
               <p class="card-text">
               Temp: ${response.list[5].main.temp.toFixed(0)} ℉ <br>
-              Humidity: ${response.list[5].main.humidity}
+              Humidity: ${response.list[5].main.humidity}%
               </p>
             </div>
         </div>
@@ -121,7 +121,7 @@ $(document).ready(function () {
             <h5 class="card-title">${moment().add(2, "days").format("L")}</h5>
               <p class="card-text">
               Temp: ${response.list[10].main.temp.toFixed(0)} ℉ <br>
-              Humidity: ${response.list[10].main.humidity}
+              Humidity: ${response.list[10].main.humidity}%
               </p>
             </div>
         </div>
@@ -135,7 +135,7 @@ $(document).ready(function () {
             <h5 class="card-title">${moment().add(3, "days").format("L")}</h5>
               <p class="card-text">
               Temp: ${response.list[16].main.temp.toFixed(0)} ℉ <br>
-              Humidity: ${response.list[16].main.humidity}
+              Humidity: ${response.list[16].main.humidity}%
               </p>
             </div>
         </div>
@@ -149,7 +149,7 @@ $(document).ready(function () {
             <h5 class="card-title">${moment().add(3, "days").format("L")}</h5>
               <p class="card-text">
               Temp: ${response.list[22].main.temp.toFixed(0)} ℉ <br>
-              Humidity: ${response.list[22].main.humidity}
+              Humidity: ${response.list[22].main.humidity}%
               </p>
             </div>
         </div>
@@ -163,7 +163,7 @@ $(document).ready(function () {
             <h5 class="card-title">${moment().add(3, "days").format("L")}</h5>
               <p class="card-text">
               Temp: ${response.list[38].main.temp.toFixed(0)} ℉ <br>
-              Humidity: ${response.list[38].main.humidity}
+              Humidity: ${response.list[38].main.humidity}%
               </p>
             </div>
         </div>
