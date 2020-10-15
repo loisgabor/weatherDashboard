@@ -1,8 +1,13 @@
 $(document).ready(function () {
   $(".btn").on("click", function (event) {
     event.preventDefault();
-
     var citySearch = $("#inputCity").val();
+    var cityButtonEl = $("<button>");
+    cityButtonEl.text(citySearch);
+    cityButtonEl.attr("id", "button" + citySearch);
+    cityButtonEl.attr("class", "btn-light btn-lg btn-block");
+    $(".card-bodyA").append(cityButtonEl);
+    localStorage.setItem("cityName" + citySearch, citySearch);
     getCity(citySearch);
     $(".forecast").show();
   });
@@ -25,7 +30,7 @@ $(document).ready(function () {
       $(".wind-speed").text("Wind Speed: " + response.wind.speed + " MPH");
       $(".humidity").text("Humidity: " + response.main.humidity + "%");
       $(".temp").text("Temperature: " + response.main.temp + " ℉");
-      localStorage.setItem("cities", citySearch);
+      localStorage.getItem("cityName", citySearch);
 
       $("#weather-icon").attr(
         "src",
@@ -73,9 +78,73 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
-      var id_num = i / 8 + 1;
-      for (var i = 0; i < id_num.length; i++) {}
+      var dayOneDate = moment().add(1, "days").format("L");
+      var tempFone = "Temp: " + response.list[5].main.temp.toFixed(0) + "  ℉";
+      var weatherPicOne = $("<img>").attr(
+        "src",
+        "http://openweathermap.org/img/wn/" +
+          response.list[5].weather[0].icon +
+          "@2x.png"
+      );
+      var humidCityOne = "Humidity: " + response.list[5].main.humidity;
+      $(".card1")
+        .text(dayOneDate, weatherPicOne, tempFone, humidCityOne)
+        .append(tempFone, weatherPicOne, humidCityOne);
+      var dayTwoDate = moment().add(2, "days").format("L");
+      var tempFTwo = "Temp: " + response.list[10].main.temp.toFixed(0) + "  ℉";
+      var weatherPicTwo = $("<img>").attr(
+        "src",
+        "http://openweathermap.org/img/wn/" +
+          response.list[10].weather[0].icon +
+          "@2x.png"
+      );
+      var humidCityTwo = "Humidity: " + response.list[10].main.humidity;
+      $(".card2")
+        .text(dayTwoDate, weatherPicTwo, tempFTwo, humidCityTwo)
+        .append(tempFTwo, weatherPicTwo, humidCityTwo);
+      var dayThreeDate = moment().add(3, "days").format("L");
+      var tempFThree =
+        "Temp: " + response.list[16].main.temp.toFixed(0) + "  ℉";
+      var weatherPicThree = $("<img>").attr(
+        "src",
+        "http://openweathermap.org/img/wn/" +
+          response.list[16].weather[0].icon +
+          "@2x.png"
+      );
+      var humidCityThree = "Humidity: " + response.list[16].main.humidity;
+      $(".card3")
+        .text(dayThreeDate, weatherPicThree, tempFThree, humidCityThree)
+        .append(tempFThree, weatherPicThree, humidCityThree);
+      var dayFourDate = moment().add(4, "days").format("L");
+      var tempFfour = "Temp: " + response.list[22].main.temp.toFixed(0) + "  ℉";
+      var weatherPicFour = $("<img>").attr(
+        "src",
+        "http://openweathermap.org/img/wn/" +
+          response.list[22].weather[0].icon +
+          "@2x.png"
+      );
+      var humidCityFour = "Humidity: " + response.list[22].main.humidity;
+      $(".card4")
+        .text(dayFourDate, weatherPicFour, tempFfour, humidCityFour)
+        .append(tempFfour, weatherPicFour, humidCityFour);
+      var dayFiveDate = moment().add(5, "days").format("L");
+      var tempFfive = "Temp: " + response.list[38].main.temp.toFixed(0) + "  ℉";
+      var weatherPicFive = $("<img>").attr(
+        "src",
+        "http://openweathermap.org/img/wn/" +
+          response.list[38].weather[0].icon +
+          "@2x.png"
+      );
+      var humidCityFive = "Humidity: " + response.list[38].main.humidity;
+      $(".card5")
+        .text(dayFiveDate, weatherPicFive, tempFfive, humidCityFive)
+
+        .append(tempFfive, weatherPicFive, humidCityFive);
+      
+      
     });
+    $("#btn(citySearch").on("click", function (event) {
+        event.preventDefault();
+        
   }
 });

@@ -25,7 +25,7 @@ input {
 .card3,
 .card4,
 .card5 {
-  background: blue;
+  background: rgba(38, 109, 241, 0.979);
   border: none;
   margin: 5px;
   display: inline-block;
