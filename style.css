@@ -19,6 +19,7 @@ h1 {
 }
 input {
   width: 75% !important;
+  margin-left: 20px;
 }
 .card1,
 .card2,
